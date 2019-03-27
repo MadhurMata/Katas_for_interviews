@@ -57,4 +57,26 @@ function fizzBuzz(n) {
 }
 
 
+// divide the array into many subarrays
+
+function chunk(array, size) {
+  const newArray = [];
+  const copyArray = [...array];
+  const numDivisions = Math.ceil(copyArray.length / size);
+  for (let i = 0; i < numDivisions; i++) {
+    newArray.push(copyArray.splice(0,size));
+  }
+  return newArray
+}
+
+// anagranms
+
+function capitalize(str) {
+  const capitalized = [];
+  for(let i of str.split(' ')){
+    capitalized.push(i[0].toUpperCase() + i.slice(1))
+  }
+  return capitalized.join(' ')
+}
+
 
