@@ -22,4 +22,22 @@ function reverseInt(n) {
     return reverse * Math.sign(n)
 }
 
+// Most common used character in a string
+
+function maxChar(str) {
+  const chars = {};
+  let max = 0;
+  let maxChar = '';
+  for (let i of str){
+    chars[i] = chars[i] + 1 || 1;
+  }
+  for ( let i in chars) {
+    if(chars[i]>max){
+      max = chars[i];
+      maxChar = i
+    }
+  }
+  return  maxChar
+}
+
 
