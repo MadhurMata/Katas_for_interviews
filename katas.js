@@ -79,4 +79,14 @@ function capitalize(str) {
   return capitalized.join(' ')
 }
 
+// capitalize the first letter of each word in the string
 
+function capitalize(str) {
+  const capitalized = [];
+  for(let i of str.split(' ')){
+    capitalized.push(i[0].toUpperCase() + i.slice(1))
+  }
+  return capitalized.join(' ')
+}
+
+module.exports = capitalize;
