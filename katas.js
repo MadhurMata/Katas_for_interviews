@@ -2,10 +2,8 @@
 // Reverse string
 
 function reverse(str) {
-  const newArray = str.split("")
-  const  reversed= newArray.reverse()
-  const reverse = reversed.join('')
-  return reverse
+  return str.split("").reverse().join('')
+
   }
 
 // Palindrome
@@ -71,13 +69,13 @@ function chunk(array, size) {
 
 // anagranms
 
-function capitalize(str) {
-  const capitalized = [];
-  for(let i of str.split(' ')){
-    capitalized.push(i[0].toUpperCase() + i.slice(1))
-  }
-  return capitalized.join(' ')
-}
+function anagrams(stringA, stringB) {
+  return cleanString(stringA) === cleanString(stringB)
+ }
+ 
+ function cleanString (str){
+  return str.toLowerCase().split('').sort().join().replace(/[^\w]/g,'')
+ }
 
 // capitalize the first letter of each word in the string
 
@@ -89,7 +87,6 @@ function capitalize(str) {
   return capitalized.join(' ')
 }
 
-module.exports = capitalize;
 
 // bubble sort numbers
 
@@ -119,4 +116,17 @@ selectionSort = (arr) => {
 function isSortedAndHow(arr) {
   return arr.every((x,i)=>i==0||arr[i]>=arr[i-1])?'yes, ascending':
          arr.every((x,i)=>i==0||arr[i]<=arr[i-1])?'yes, descending':'no'
+}
+
+console.log(isSortedAndHow([30, -5, 90, 4, -8]))
+
+// Print out the n-th entry in the fibonacci series
+
+function fib(n) {
+  const arr = [0, 1]
+  for (let i = 2; i <= n; i++) {
+    const char = arr[i-1] + arr[i-2]
+    arr.push(char)  
+  }
+return arr[n]
 }
